@@ -16,14 +16,19 @@
 #Of note: In the final paper figure the individual GO-terms were not plotted
 
 rm(list=ls())
+
 library(dplyr)
 library(pheatmap)
 library(RColorBrewer)
 
-
 options(stringsAsFactors = FALSE)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))# Set wd to the current file location
+# Set wd to the current file location
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+#Create directories for figure creation
+dir.create("../Output_Data")
+dir.create("../Output_Figures")
 
 
 ########Organizing and Cleaning Data  #################################################
@@ -97,12 +102,9 @@ pdf("../Output_Figures/12_Shared_GO_term_heatmap.pdf")
 print(heatmap)
 dev.off() 
 
-
-# sessionInfo(package = NULL)
-# 
-# R version 3.6.1 (2019-07-05)
+# R version 3.6.3 (2020-02-29)
 # Platform: x86_64-apple-darwin15.6.0 (64-bit)
-# Running under: macOS Mojave 10.14.6
+# Running under: macOS Catalina 10.15.7
 # 
 # Matrix products: default
 # BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
@@ -115,10 +117,19 @@ dev.off()
 #   [1] stats     graphics  grDevices utils     datasets  methods   base     
 # 
 # other attached packages:
-#   [1] RColorBrewer_1.1-2 pheatmap_1.0.12    dplyr_1.0.6       
+#   [1] RColorBrewer_1.1-2 pheatmap_1.0.12    ggpubr_0.4.0.999   data.table_1.13.6  forcats_0.5.1      stringr_1.4.0     
+# [7] dplyr_1.0.5        purrr_0.3.4        readr_1.4.0        tidyr_1.1.3        tibble_3.1.1       ggplot2_3.3.3     
+# [13] tidyverse_1.3.1   
 # 
 # loaded via a namespace (and not attached):
-#   [1] rstudioapi_0.13  magrittr_2.0.1   tidyselect_1.1.1 munsell_0.5.0    colorspace_2.0-1 R6_2.5.0         rlang_0.4.11     fansi_0.4.2      tools_3.6.1     
-# [10] grid_3.6.1       gtable_0.3.0     utf8_1.2.1       cli_2.5.0        DBI_1.1.1        ellipsis_0.3.2   assertthat_0.2.1 tibble_3.1.2     lifecycle_1.0.0 
-# [19] crayon_1.4.1     purrr_0.3.4      ggplot2_3.3.3    vctrs_0.3.8      glue_1.4.2       compiler_3.6.1   pillar_1.6.1     generics_0.1.0   scales_1.1.1    
-# [28] pkgconfig_2.0.3
+#   [1] tidyselect_1.1.0  haven_2.3.1       carData_3.0-4     colorspace_1.4-1  vctrs_0.3.7       generics_0.1.0   
+# [7] utf8_1.1.4        rlang_0.4.10      pillar_1.6.0      foreign_0.8-76    glue_1.4.2        withr_2.4.2      
+# [13] DBI_1.1.0         dbplyr_2.1.1      sessioninfo_1.1.1 modelr_0.1.8      readxl_1.3.1      lifecycle_1.0.0  
+# [19] munsell_0.5.0     ggsignif_0.6.1    gtable_0.3.0      cellranger_1.1.0  zip_2.1.1         rvest_1.0.0      
+# [25] rio_0.5.26        labeling_0.4.2    curl_4.3          fansi_0.4.1       broom_0.7.6       Rcpp_1.0.5       
+# [31] backports_1.2.0   scales_1.1.1      jsonlite_1.7.2    abind_1.4-5       farver_2.0.3      fs_1.5.0         
+# [37] hms_1.0.0         digest_0.6.27     openxlsx_4.2.3    stringi_1.5.3     rstatix_0.7.0     cowplot_1.1.1    
+# [43] grid_3.6.3        cli_2.5.0         tools_3.6.3       magrittr_2.0.1    car_3.0-10        crayon_1.4.1     
+# [49] pkgconfig_2.0.3   ellipsis_0.3.2    MASS_7.3-53       xml2_1.3.2        reprex_2.0.0      lubridate_1.7.10 
+# [55] assertthat_0.2.1  httr_1.4.2        rstudioapi_0.13   R6_2.5.0          compiler_3.6.3 
+

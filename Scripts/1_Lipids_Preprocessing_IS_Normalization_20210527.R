@@ -16,13 +16,14 @@
 
 #Packages:
 library(tidyverse)
+library(dplyr)
 
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))# Set wd to the current file location
+# Set wd to the current file location
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 #Create directories for figure creation
 dir.create("../Output_Data")
 dir.create("../Output_Figures")
-
 
 rm(list=ls())
 
@@ -183,12 +184,9 @@ table_norm_med[,6:ncol(table_norm_med)] <- sweep(table_norm_med[,6:ncol(table_no
 save(table_norm_med, file = paste0("../Output_Data/1_Lipids_Preprocessed_Normalized", ".Rdata")) #output in ng/mg protein
 write.csv(table_norm_med, "../Output_Data/1_Lipids_Preprocessed_Normalized.csv")
 
-
-# sessionInfo(package = NULL)
-# 
-# R version 3.6.1 (2019-07-05)
+# R version 3.6.3 (2020-02-29)
 # Platform: x86_64-apple-darwin15.6.0 (64-bit)
-# Running under: macOS Mojave 10.14.6
+# Running under: macOS Catalina 10.15.7
 # 
 # Matrix products: default
 # BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
@@ -200,9 +198,16 @@ write.csv(table_norm_med, "../Output_Data/1_Lipids_Preprocessed_Normalized.csv")
 # attached base packages:
 #   [1] stats     graphics  grDevices utils     datasets  methods   base     
 # 
+# other attached packages:
+#   [1] forcats_0.5.1   stringr_1.4.0   dplyr_1.0.5     purrr_0.3.4     readr_1.4.0     tidyr_1.1.3     tibble_3.1.1   
+# [8] ggplot2_3.3.3   tidyverse_1.3.1
+# 
 # loaded via a namespace (and not attached):
-#   [1] fansi_0.4.2      assertthat_0.2.1 utf8_1.2.1       crayon_1.4.1     dplyr_1.0.6      R6_2.5.0         DBI_1.1.1       
-# [8] lifecycle_1.0.0  magrittr_2.0.1   pillar_1.6.1     rlang_0.4.11     rstudioapi_0.13  vctrs_0.3.8      generics_0.1.0  
-# [15] ellipsis_0.3.2   tools_3.6.1      glue_1.4.2       purrr_0.3.4      compiler_3.6.1   pkgconfig_2.0.3  tidyselect_1.1.1
-# [22] tibble_3.1.2
+#   [1] Rcpp_1.0.5       cellranger_1.1.0 pillar_1.6.0     compiler_3.6.3   dbplyr_2.1.1     tools_3.6.3      lubridate_1.7.10
+# [8] jsonlite_1.7.2   lifecycle_1.0.0  gtable_0.3.0     pkgconfig_2.0.3  rlang_0.4.10     reprex_2.0.0     DBI_1.1.0       
+# [15] cli_2.5.0        rstudioapi_0.13  haven_2.3.1      xml2_1.3.2       withr_2.4.2      httr_1.4.2       fs_1.5.0        
+# [22] generics_0.1.0   vctrs_0.3.7      hms_1.0.0        grid_3.6.3       tidyselect_1.1.0 glue_1.4.2       R6_2.5.0        
+# [29] fansi_0.4.1      readxl_1.3.1     modelr_0.1.8     magrittr_2.0.1   scales_1.1.1     backports_1.2.0  ellipsis_0.3.2  
+# [36] rvest_1.0.0      assertthat_0.2.1 colorspace_1.4-1 utf8_1.1.4       stringi_1.5.3    munsell_0.5.0    broom_0.7.6     
+[43] crayon_1.4.1
 
